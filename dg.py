@@ -330,25 +330,6 @@ decision_graph_edges = set()
 decision_graph = Decision_Graph(decision_graph_nodes, decision_graph_edges)
 # decision_graph # take a look; so far just one node (root) and no edges
 
-from typing import Set
-
-@dataclass(unsafe_hash=True)
-class Decision_Graph_Edge:
-    __slots__ = ['source', 'target']
-    source: int
-    target: int
-
-@dataclass
-class Decision_Graph: # set of nodes
-    __slots__ = ['nodes', 'edges']
-    nodes: Set[Decision_Graph_Node]
-    edges: Set[Decision_Graph_Edge]
-
-decision_graph_nodes = {root} # set of nodes
-decision_graph_edges = set()
-decision_graph = Decision_Graph(decision_graph_nodes, decision_graph_edges)
-# decision_graph # take a look; so far just one node (root) and no edges
-
 # stable lookup for index position of pattern in witness-specific lists of patterns
 patterns_A_position_by_value = {val: index for index, val in enumerate(patterns_A)} # retrieve offset in witness-specific list of patterns by pattern
 patterns_B_position_by_value = {val: index for index, val in enumerate(patterns_B)} # retrieve offset in witness-specific list of patterns by pattern
